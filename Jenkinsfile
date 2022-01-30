@@ -1,42 +1,20 @@
-pipeline {
-         agent any
-         stages {
-                 stage('Build') {
-                 steps {
-                     echo 'Hi, GeekFlare. Starting to build the App.'
-                 }
-                 }
-                 stage('Test') {
-                 steps {
-                    input('Do you want to proceed?')
-                 }
-                 }
-                 stage('Deploy') {
-                 parallel { 
-                            stage('Deploy start ') {
-                           steps {
-                                echo "Start the deploy .."
-                           } 
-                           }
-                            stage('Deploying now') {
-                            agent {
-                                    docker {
-                                            reuseNode true
-                                            image ‘nginx’
-                                           }
-                                    }
-                            
-                              steps {
-                                echo "Docker Created"
-                              }
-                           }
-                           }
-                           }
-                 stage('Prod') {
-                     steps {
-                                echo "App is Prod Ready"
-                              }
-                 
-              }
-}
-}
+pipeline {  
+    agent any  
+    stages {  
+            stage ('Build') {  
+                echo 'Running build phase...'    
+            }  
+            stage ('Test') {  
+                echo 'Running Test phase...'    
+            }  
+            stage ('QA') {  
+                echo 'Running QA phase...'    
+            }  
+            stage ('Deploy') {  
+                echo 'Running Deploy phase...'    
+            }  
+            stage ('Monitor') {  
+                echo 'Running Monitor phase...'    
+            }  
+    }  
+}  
