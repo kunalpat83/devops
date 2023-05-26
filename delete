@@ -1,0 +1,54 @@
+{
+  "_comment": "A simple delete button",
+  "$schema": "https://developer.microsoft.com/json-schemas/sp/v2/column-formatting.schema.json",
+  "elmType": "button",
+  "customRowAction": {
+    "action": "delete"
+  },
+  "attributes": {
+    "class": "ms-fontColor-white ms-fontColor-black--hover"
+  },
+  "style": {
+    "border": "none",
+    "cursor": "pointer",
+    "background-color": "transparent"
+  },
+  "children": [
+    {
+      "elmType": "div",
+      "attributes": {
+        "class": "ms-bgColor-orangeLighter ms-bgColor-yellow--hover ms-fontColor-white ms-fontColor-black--hover"
+      },
+      "style": {
+		"font-size": "12px",
+		"font-family": "arial",
+		"border": "1px solid Black",
+		"border-radius": "7px",
+		"padding": "3px 5px 3px 5px",
+		"box-shadow": "2px 2px #999"
+      },
+	  "children": [
+		{
+		  "elmType": "div",
+		  "attributes": {
+            "iconName": "CalculatorMultiply"
+		  },
+		  "style": {
+			"display": "=if('CalculatorMultiply' != '','inline-block','none')",
+			"vertical-align": "middle",
+			"padding-right": "5px"
+		  }		  
+		},
+		{
+		  "elmType": "div",
+		  "txtContent": "=if('' != '',' DELETE',' DELETE')",
+		  "style": {
+			"display": "inline-block",
+			"font-family": "arial",
+			"vertical-align": "middle"
+		  }
+		}
+	  ]
+    }
+  ]
+}
